@@ -1,0 +1,37 @@
+.modal{overflow-y:auto;}
+
+/*모달사이즈*/
+.modal .modal-dialog.w400{max-width:400px;}
+.modal .modal-dialog.w460{max-width:460px;}
+.modal .modal-dialog.w600{max-width:600px;}
+.modal .modal-dialog.w700{max-width:700px;}
+.modal .modal-dialog.w800{max-width:800px;}
+.modal .modal-dialog.w900{max-width:900px;}
+.modal .modal-dialog.w900{max-width:900px;}
+.modal .modal-dialog.w1000{max-width:1000px;}
+.modal .modal-dialog.w1600{max-width:1600px;}
+
+/*모달커스텀*/
+.modal-open .modal{overflow-x:auto;}
+.modal .btn-close{display:flex;position:absolute;top:16px;right:16px;}
+.modal .modal-dialog{margin-top:100px;}
+.modal .modal-content{border-radius:8px;border:none;overflow:hidden;}
+.modal .modal-header{position:relative;display:block;padding:16px 24px;border-bottom:1px solid var(--border-color-default)}
+.modal .modal-header .tit{@include typo-heading-lg-bold;}
+.modal .modal-header .close-btn{position: absolute;top:12px;right:16px;}
+.modal .modal-body{padding:24px 24px;}
+.modal .modal-footer{padding:16px 24px;border-top:1px solid var(--border-color-default)}
+.modal-footer [class*='btn-']{margin:0;margin-left:8px;min-width: 80px;}
+
+/* lnb모달 */
+.modal-flexTab .close-btn{position:absolute;top:10px;right:16px;}
+.modal-flexTab .custom-control-label.sm{font-size:14px;}
+.modal-flexTab .cont-head .tit{@include typo-heading-lg-bold;}
+
+/* system 모달 */
+.modal-system .modal-header{border-bottom:0;padding:0;}
+.modal-system .modal-body{padding:16px 24px 24px;}
+.modal-system .modal-body .tit{@include typo-heading-md-bold;margin:2px 0 12px;width:calc(100% - 30px)}
+.modal-system .modal-body .txt{@include typo-body-lg-regular}
+.modal-system .modal-footer{padding:12px 24px;}
+.modal-system .modal-header .close-btn{z-index:10;}

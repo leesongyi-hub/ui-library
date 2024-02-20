@@ -1,0 +1,44 @@
+:root {overflow-wrap:break-word;}
+body, button, input, select, table, textarea,dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, select, table, td, textarea, th, ul{font-size:var(--font-size-body-md);line-height:var(--line-height-body-md);color:var(--text-color-default);margin:0;padding:0;font-weight:400;font-family:"pretendard",-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI','Malgun Gothic','맑은 고딕',Dotum,'돋움',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji';}
+h1, h2, h3, h4, h5, h6 {font-size:inherit;line-height:inherit;color:inherit}
+textarea {-webkit-backface-visibility:hidden;backface-visibility:hidden;background-color:transparent;border:0;word-break:keep-all;word-wrap:break-word}
+button, input {-webkit-border-radius:0;border-radius:0;border:0}
+button {background-color:transparent;}
+button:focus{outline:3px solid var(--focus-color);box-shadow: none !important;}
+button:focus-visible {outline:3px solid var(--focus-color);}
+fieldset, img {border:0}
+img {max-width:100%;vertical-align:top}
+ol, ul {list-style:none}
+address, em {font-style:normal}
+a {display:inline-block;color:inherit;text-decoration:none;}
+a:hover {color:inherit;text-decoration:none;}
+iframe {overflow:hidden;margin:0;border:0;padding:0;vertical-align:top}
+mark {background-color:transparent}
+i {font-style:normal}
+span, a, strong{display:inline-block;}
+table{border-spacing:0px;border-collapse:collapse;table-layout: fixed;}
+
+/* scrollBar */
+::-webkit-scrollbar{width:6px;height: 6px;}
+::-webkit-scrollbar-thumb {background-color: rgba(202, 202, 202, .5);border-radius:10px;}
+::-webkit-scrollbar-thumb:hover {background: rgba(75, 75, 75, .5);}
+::-webkit-scrollbar-button:start:decrement, 
+::-webkit-scrollbar-button:end:increment {display:none;}
+body::-webkit-scrollbar {width: 12px;height: 12px;}
+
+/* input */
+[type=checkbox], [type=radio] {box-sizing:border-box;padding:0}
+[type=search] {-webkit-appearance: none;-webkit-border-radius:0;outline-offset:-2px}
+[type=search]::-webkit-search-decoration {-webkit-appearance:none;border-radius: 0;background-color:#fff;}
+::-webkit-file-upload-button {-webkit-appearance:button;font:inherit}
+input::-ms-clear,
+input::-ms-reveal{display:none;}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration{ display:none;}
+input::-webkit-inner-spin-button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}

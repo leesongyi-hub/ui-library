@@ -1,0 +1,29 @@
+/* 부트스트랩 탭 커스텀 */
+.tab-content>.active{outline:0 !important}
+
+.nav-tabs{margin:0 -24px;padding:0 24px;border-color:var(--border-color-default)}
+.nav-tabs .nav-item{margin-right:32px;}
+.nav-tabs .nav-link{@include typo-heading-sm-medium;position: relative;padding:14px 0;border:0;color:var(--text-color-light);}
+.nav-tabs .nav-link:hover{color:var(--text-color-primary);}
+.nav-tabs .nav-link.active{border:0;color:var(--text-color-primary);}
+.nav-tabs .nav-link.active::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background-color:var(--text-color-primary);}
+
+.flex-tabs{display: flex;width:100%;}
+.flex-tabs .nav-tabs{display:inline;margin:0;padding:0;}
+.flex-tabs .nav-tabs .nav-item{margin:0;}
+.flex-tabs .nav-tabs .nav-link.active{background-color:var(--bg-color-tonal-dark-light);color:var(--text-color-primary)}
+.flex-tabs .nav-tabs .nav-link.active::after{display:none;}
+.flex-tabs .nav-area{min-width:200px;background-color:var(--bg-color-light);border-right:1px solid var(--border-color-default)}
+.flex-tabs .nav-area li button{@include typo-body-md-medium;display:block;width:100%;min-height:48px;padding:8px 16px;text-align: left;}
+.flex-tabs .nav-area li.on button{background-color:var(--bg-color-tonal-dark-light);color:var(--text-color-primary)}
+.flex-tabs .right-area{flex:1;width: calc(200px - 100%);}
+.flex-tabs article.cont-area .cont-body{position:relative;max-height:580px;height:580px;padding:20px;overflow-y:auto;}
+.flex-tabs article.cont-area .cont-foot .area-btn{display:flex;justify-content:right;}
+.flex-tabs article.cont-area .cont-foot .area-btn button{margin-left:8px;}
+
+article.cont-area{flex:1;}
+article.cont-area .cont-head{min-height:52px;padding:10px 20px;border-bottom:1px solid var(--border-color-default)}
+article.cont-area .cont-body .cont-sec{margin-bottom:28px;}
+article.cont-area .cont-body .cont-sec .tit{min-width:120px;width:120px;margin-bottom:12px;}
+article.cont-area .cont-foot{padding:8px 24px;border-top:1px solid var(--border-color-default)}
+article.cont-area .cont-foot .area-btn{text-align: right;}

@@ -1,0 +1,6 @@
+.dropdown-menu{padding:0;margin:10px 0;border:1px solid var(--border-color-default);box-shadow: var(--dropdown-shadow);}
+.dropdown-toggle::after{display:none;}
+
+.dropdown-menu{min-width:auto;}
+.dropdown-list{padding:6px 0;}
+.dropdown-list-item:hover{background-color:var(--bg-color-default)}

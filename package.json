@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-cssbeautify": "^3.0.1",
+    "gulp-file-include": "^2.3.0",
+    "gulp-inject-string": "^1.1.2",
+    "gulp-prettify": "^0.5.0",
+    "gulp-tap": "^2.0.0",
+    "vinyl-sourcemaps-apply": "^0.2.1"
+  },
+  "dependencies": {}
+}

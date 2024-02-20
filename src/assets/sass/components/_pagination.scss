@@ -1,0 +1,9 @@
+/*페이징*/
+.pagination{width:100%;display:flex;justify-content:center;}
+.pagination ul{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.pagination .page_item{display:inline-flex;justify-content:center;min-width:30px;width:30px;height:30px;margin:0 2px;}
+.pagination .page_item .page_link{display:flex;align-items: center;justify-content: center;width:100%;height:100%;line-height:30px;border-radius: var(--form-radius);font-size:14px;background-color: transparent;}
+.pagination .page_item .page_link:hover{background-color:var(--paging-hover-bg-color);}
+.pagination .page_item .page_link:disabled{opacity: .2;}
+.pagination .page_item.on .page_link{color:var(--paging-active-text-color);font-weight:600;background-color:var(--paging-active-bg-color);}
+.pagination .ico-svg{position: relative;top:-2px;}

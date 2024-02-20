@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+//공통레이아웃
+.wrap{width:100%;min-width:1600px;overflow-x:auto;}
+.wrap .container{width:100%;max-width:100%;padding:0;margin:0;}
+.wrap .content{width:100%;padding-top: var(--header-height);padding-left:240px;}
+.wrap .main-cont{position:relative;width:100%;padding-top:48px;}
+.wrap .main-header{position:absolute;top:0;left:0;display:flex;align-items: center;width:100%;padding:10px 24px;min-height:48px;border-bottom:1px solid var(--border-color-default);}
+.wrap .main-header .breadcrumbs ul{display:flex;align-items: center;}
+.wrap .main-header .breadcrumbs li{display:flex;align-items: center;color:var(--text-color-lighter);}
+.wrap .main-header .breadcrumbs li.current{color:var(--text-color-dark);}
+.wrap .main-header .breadcrumbs li:last-child:after{display:none;}
+.wrap .main-header .breadcrumbs .arrow{margin:0 4px;}
+.wrap .main-body{min-height:calc(100vh - var(--header-height));padding:24px 24px 80px;}
+
+//시스템관리 > 시스템 설정
+.article .tit{margin-bottom:16px;}
+.system-page .article{margin-bottom:36px;}
+
+.system-page .keywordTable-area .res-table .tr .td{display:flex;flex-direction: column;height:100%;padding:10px;}
+.system-page .keywordTable-area .res-table textarea{height:100%;}
+.system-page .fixed-area{position:fixed;bottom:0;left:0;width:100%;text-align: right;padding:10px 24px;background-color:var(--base-color-white);box-shadow: var(--shadow-md);border-top:1px solid var(--border-color-light)}
+
+//시스템관리 > [모달]역할상세보기
+.role-list-item{display:flex;margin-bottom: 12px;}
+.role-list-item .role-tit{width:120px;color:var(--text-color-light)}
+
+//시스템관리 > 역할관리 > [모달]관리도구 메뉴권한
+.modal-role .authorization-area .table-wrap th,
+.modal-role .authorization-area .table-wrap td{color:var(--text-color-300);font-weight: 400;border-right:1px solid var(--border-color-light)}
+.modal-role .authorization-area .table-wrap tr td:first-child ,
+.modal-role .authorization-area .table-wrap tr th:first-child{position: sticky;top:0;left:0;background-color:var(--bg-color-default);z-index: 10;}
+.modal-role .authorization-area .table-wrap td .custom-control{text-align:center;justify-content: center !important;}
+.modal-role .authorization-area .table-wrap .custom-control .custom-control-label{flex-wrap:wrap;align-items: center;justify-content: center;flex-flow:column-reverse;}
+.modal-role .authorization-area .table-wrap .custom-control .custom-control-label span{display:flex;margin-bottom:6px;width: 100%;min-height:38px;align-items: end;margin-left: 0 !important;text-align: center;line-height:16px;}
+.modal-role .authorization-area .table-wrap .custom-control{justify-content: center;}
+
+//시스템관리 > 역할관리 > [모달]상담/관리 권한
+.modal-role .checked-area{margin-top:24px;padding:0px 20px 20px 20px;border:1px solid var(--border-color-light);border-radius: 4px;}
+.modal-role .checked-area.disabled{display:none;}
+.memberList-view-area{display:flex;}
+.memberList-view-area .memberList-view{width:50%;}
+.memberList-view-area .memberList-view-head{display:flex;align-items: center;margin-bottom:8px;}
+.memberList-view-area .memberList-view-head button{margin-left:12px;}
+.memberList-view-area .memberList-view-list{height:250px;padding:12px 16px;background-color:var(--bg-color-light);border:1px solid var(--border-color-light);border-radius: var(--border-radius-md);overflow-y:auto;}
+.memberList-view-area .memberList-view-list li{margin-bottom:6px;}
+.memberList-view-area .memberList-view-list .nodata{display:flex;justify-content: center;align-items: center;margin-bottom:0;height:100%;color:var(--text-color-lighter)}
+
+//시스템관리 > 역할관리 > [모달]상담사 역할목록 편집
+.modal-counselor-edit .memberList-wrap{border:1px solid var(--border-color-light);}
+.modal-counselor-edit .memberList-head{display:flex;align-items: space-between;align-items: center;padding:8px 16px;border-bottom:1px solid var(--border-color-light);justify-content:space-between;min-height:49px;}
+.modal-counselor-edit .memberList-area{padding:12px 16px;height: 500px;max-height: 500px;overflow-y: auto;}
+.modal-counselor-edit .memberList-area li{margin-bottom:6px;}
+
+.modal-counselor-edit .memberList-wrap.add{background-color:var(--bg-color-light);}
+.modal-counselor-edit .memberList-wrap.add .memberList-area{height: 549px;max-height: 549px;}
+.modal-counselor-edit .memberList-wrap.add li{display:flex;justify-content: space-between;align-items: baseline;}
+.modal-counselor-edit .memberList-wrap.add li button{position: relative;top:3px;margin-left:12px;color:var(--icon-color-lighter);opacity: .5;}
+.modal-counselor-edit .memberList-wrap.add li button:hover{opacity: 1;}
+
+.modal-counselor-edit .arrow-icon-area{display:flex;align-items:center;height: 100%;font-size:24px;}
+
+//시스템관리 > 어드바이저 설정
+.util-bar{display:flex;align-items:end;margin-bottom:16px;}
+.util-bar .right-area{margin-left:auto;font-size:0;}
+
+//시시템관리 > [모달] 계정 추가, 상세, 수정
+[class*="modal-account"] .account-area .account-item{display: flex;margin-bottom:16px;}
+[class*="modal-account"] .account-area .account-item:last-child{margin-bottom:0;}
+[class*="modal-account"] .account-area .account-item > label{width:160px;min-width:160px;color:var(--text-color-light)}
+[class*="modal-account"] .account-area .account-item .input-label{line-height:36px;}
+[class*="modal-account"] .account-area .form-area{flex: 1;width:calc(100% - 160px)}
+[class*="modal-account"] .sub-field{margin-top:24px;padding-top:24px;border-top:1px solid var(--border-color-light)}
+
+//시시템관리 > [모달] 부서 상세보기
+[class*="modal-team-"] .account-area .account-item{display: flex;margin-bottom:16px;}
+[class*="modal-team"] .account-area .account-item:last-child{margin-bottom:0;}
+[class*="modal-team-"] .account-area .account-item > label{width:160px;min-width:160px;color:var(--text-color-light)}
+[class*="modal-team-"] .account-area .account-item .input-label{line-height:36px;}
+[class*="modal-team-"] .account-area .form-area{flex: 1;width:calc(100% - 160px)}
+[class*="modal-team"] .sub-field{margin-top:24px;padding-top:24px;border-top:1px solid var(--border-color-light)}
+
+//시스템관리 > [모달]비밀번호 초기화
+.modal-resetPw .example-area{margin:16px 0;padding:12px;text-align: center;background-color: var(--bg-color-default);}
+
+// 시스템관리 > 어드바이저 설정
+.comp-area > li{border:1px solid #eee;border-radius: 8px;overflow: hidden;margin-bottom: 24px;box-shadow: var(--shadow-sm);}
+.comp-item{display:flex;padding:8px 16px;align-items: center;background-color:var(--bg-color-default);border-bottom:1px solid var(--border-color-light);}
+.comp-item .left-area{display:flex;}
+.comp-item .left-area label{margin-right:4px;}
+.comp-item .right-area{display:flex;margin-left: auto;}
+.addSubComp-btn-area{width:100%;}
+.addSubComp-btn-area:hover{background-color:var(--bg-color-default)}
+.addSubComp-btn-area .addSubComp-btn{display:flex;width:100%;justify-content: center;align-items: center;height:32px;font-size:13px;font-weight:500;}
+
+.compSub-area .comp-item{position:relative;padding-left:32px;background-color: #fff;}
+.compSub-area .comp-item::after{position:absolute;content:'';display:inline-block;width:10px;height:1px; background-color:var(--border-color-dark);top:50%;left:16px;}
+.compSub-area .comp-item::before{position:absolute;content:'';display:inline-block;width:1px;height:8px; background-color:var(--border-color-dark);top:calc(50% - 8px);left:16px;}
+
+.comp-area .form-switch{width:56px;}
+.comp-area .form-switch label::after{content:'미사용';word-break:keep-all;position:absolute;top:0;left:22px;display:block;font-size:11px;line-height:24px;font-weight:700;color:var(--text-color-lighter);opacity: .9;letter-spacing:-.2px}
+.comp-area .form-switch input:checked + label::after{content:'사용';left:8px;color:#fff;}
+
+//시스템관리 > 시스템모니터링
+.monitoring-page .table-area{max-height: 582px;}
+.monitoring-page .table-wrap th:first-child{padding-left:24px;}
+.monitoring-page .table-wrap td:first-child{padding-left:24px;}
+.monitoring-page .table-wrap{border-top:0;}
+.monitoring-page .table-wrap tfoot{bottom:-1px;background-color:var(--bg-color-light);z-index: 10;}
+.monitoring-page .table-wrap tfoot tr:hover{background-color:var(--bg-color-light);}
+.monitoring-page .table-wrap tfoot td{border-top:1px solid var(--border-color-default)}
+
+//그래프영역
+.graph-area{border:1px solid var(--border-color-light);padding:16px;border-radius: var(--border-radius-md);}
+.graph-area .graph{position:relative;}
+
+//윈도우팝업
+.windowPop-wrap{padding-top:64px;}
+.windowPop-head{position:fixed;top:0;left:0;width:100%;border-bottom:1px solid var(--border-color-light);background-color: var(--bg-color-light);}
+.windowPop-body{position:relative;padding:16px;height:calc(100vh - 64px)}
+
+//비활성화 dim
+.disabled-dim{display:flex;align-items: center;justify-content: center;width:100%;height:100%;position:absolute;top:0;left:0;background-color:rgba(0,0,0,.6);z-index:10;}
+.disabled-dim .txt{color:#fff;}

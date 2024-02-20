@@ -1,0 +1,18 @@
+//material-icons
+.wrap [class*=ico]{font-size:20px;color:var(--icon-color-default)}
+.wrap [class*=ico].xxs{font-size:14px;}
+.wrap [class*=ico].xs{font-size:16px;}
+.wrap [class*=ico].sm{font-size:18px;}
+.wrap [class*=ico].lg{font-size:22px;}
+.wrap [class*=ico].xl{font-size:24px;}
+
+//color
+.wrap [class*="ico"].col-white{color:var(--base-color-white)}
+// .wrap [class*="ico"].col-darkgray{color:var(--icon-color-dark)}
+.wrap [class*="ico"].col-gray{color:var(--icon-color-default)}
+.wrap [class*="ico"].col-lightgray{color:var(--icon-color-lighter)}
+
+.wrap [class*="ico"].col-primary{color:var(--icon-color-primary)}
+.wrap [class*="ico"].col-error{color:var(--icon-color-error)}
+.wrap [class*="ico"].col-warning{color:var(--icon-color-warning)}
+.wrap [class*="ico"].col-success{color:var(--icon-color-success)}

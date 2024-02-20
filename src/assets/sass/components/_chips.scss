@@ -1,0 +1,8 @@
+// chip
+.chip-area{font-size:0;}
+.chip{display:inline-flex;align-items:center;font-size:14px;height:26px;padding:0 4px 0 8px;margin-top:4px;background:var(--bg-color-default);border:1px solid var(--border-color-light);border-radius: var(--border-radius-max);}
+.chip{margin-right:4px;}
+.chip .txt{line-height:100%;}
+.chip .txt + button{margin-left:2px;}
+.chip .txt + button:hover .ico-svg{color:inherit}
+.chip.lg{min-width:auto;height:36px;line-height:36px;padding:0 12px;}

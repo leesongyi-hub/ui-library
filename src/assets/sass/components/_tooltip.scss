@@ -1,0 +1,16 @@
+.tooltip{font-size:13px !important;font-family: pretendard;margin-bottom:4px;}
+.tooltip-inner{border-radius: 6px !important;}
+
+/* 가이드 툴팁 */
+.btn-guide-area{display:inline-flex;align-items: center;position: relative;}
+.btn-guide-area .btn-guide{position: relative;height:100%;min-width:16px;max-width:16px;height:16px;line-height:17px;font-size:12px;font-weight:600;color:var(--text-color-light);background-color:var(--base-color-gray-50);border-radius: var(--border-radius-circle);}
+.btn-guide-area:hover .btn-guide + .guide-tooltip{display:block;}
+.btn-guide-area .guide-tooltip{display:none;position: absolute;top:calc(100% + 14px);left:50%;min-width:150px;padding:8px 12px;background-color:#fff;box-shadow: var(--shadow-md);border:1px solid var(--border-color-dark);border-radius: var(--border-radius-md);transform: translateX(-50%);z-index: 120;}
+.btn-guide-area .guide-tooltip::after{content:'';display:block;position: absolute;top:-6.5px;left:50%;margin-left:-6px;width:12px;height:12px;border:1px solid var(--border-color-dark);border-radius: 4px 0 0 0 ;transform: rotate(45deg);background-color:#fff;border-bottom:0;border-right:0;}
+.btn-guide-area .guide-tooltip .inner{display: flex;white-space: nowrap;}
+
+.btn-guide-area .guide-tooltip.right{left:calc(100% + 14px);top:50%;transform: translateY(-50%);}
+.btn-guide-area .guide-tooltip.right::after{top:50%;left:0;margin-top:-6px;transform:rotate(315deg);}
+
+.btn-guide-area .guide-tooltip.top{top:auto;bottom:calc(100% + 14px)}
+.btn-guide-area .guide-tooltip.top::after{top:auto;bottom:-6.5px;transform:rotate(225deg);}

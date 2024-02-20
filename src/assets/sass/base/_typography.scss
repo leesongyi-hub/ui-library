@@ -1,0 +1,449 @@
+$font-size-root:  14px;
+
+$font-size-display-lg: round($font-size-root * 1.8);
+$font-size-display-md: round($font-size-root * 1.6);
+$font-size-display-sm: round($font-size-root * 1.4);
+
+$font-size-heading-lg: round($font-size-root * 1.3);
+$font-size-heading-md: round($font-size-root * 1.2);
+$font-size-heading-sm: round($font-size-root * 1.15);
+
+$font-size-body-lg: $font-size-root + 1;
+$font-size-body-md: $font-size-root;
+$font-size-body-sm: $font-size-root - 1;
+
+$font-size-caption-lg: $font-size-root - 1;
+$font-size-caption-md: $font-size-root - 2;
+$font-size-caption-sm: $font-size-root - 3;
+
+$line-height-display-lg: round($font-size-display-lg * 1.3);
+$line-height-display-md: round($font-size-display-md * 1.3);
+$line-height-display-sm: round($font-size-display-sm * 1.3);
+
+$line-height-heading-lg: round($font-size-heading-lg * 1.3);
+$line-height-heading-md: round($font-size-heading-md * 1.3);
+$line-height-heading-sm: round($font-size-heading-sm * 1.3);
+
+$line-height-body-lg: round($font-size-body-lg * 1.6);
+$line-height-body-md: round($font-size-body-md * 1.6);
+$line-height-body-sm: round($font-size-body-sm * 1.7);
+
+$line-height-caption-lg: round($font-size-caption-lg * 1.4);
+$line-height-caption-md: round($font-size-caption-md * 1.4);
+$line-height-caption-sm: round($font-size-caption-sm * 1.4);
+
+:root {
+  --font-size-root: #{$font-size-root};
+
+  --font-size-display-lg: #{$font-size-display-lg};
+  --font-size-display-md: #{$font-size-display-md};
+  --font-size-display-sm: #{$font-size-display-sm};
+
+  --font-size-heading-lg: #{$font-size-heading-lg};
+  --font-size-heading-md: #{$font-size-heading-md};
+  --font-size-heading-sm: #{$font-size-heading-sm};
+
+  --font-size-body-lg: #{$font-size-body-lg};
+  --font-size-body-md: #{$font-size-body-md};
+  --font-size-body-sm: #{$font-size-body-sm};
+
+  --font-size-caption-lg: #{$font-size-caption-lg};
+  --font-size-caption-md: #{$font-size-caption-md};
+  --font-size-caption-sm: #{$font-size-caption-sm};
+
+  --line-height-display-lg: #{$line-height-display-lg};
+  --line-height-display-md: #{$line-height-display-md};
+  --line-height-display-sm: #{$line-height-display-sm};
+
+  --line-height-heading-lg: #{$line-height-heading-lg};
+  --line-height-heading-md: #{$line-height-heading-md};
+  --line-height-heading-sm: #{$line-height-heading-sm};
+
+  --line-height-body-lg: #{$line-height-body-lg};
+  --line-height-body-md: #{$line-height-body-md};
+  --line-height-body-sm: #{$line-height-body-sm};
+
+  --line-height-caption-lg: #{$line-height-caption-lg};
+  --line-height-caption-md: #{$line-height-caption-md};
+  --line-height-caption-sm: #{$line-height-caption-sm};
+
+  --font-weight-bold: 700;
+  --font-weight-semibold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+}
+
+/* 
+  [Utility class]
+*/
+$size-map: (
+  lg,
+  md,
+  sm
+);
+
+$usage-map: ( 
+  display,
+  heading,
+  body,
+  caption,
+);
+
+$weight-map: (
+  bold,
+  semibold,
+  medium,
+  regular,
+);
+
+[class*='typo-display']{
+  color:var(--text-color-default);
+}
+
+[class*='typo-heading']{
+  color:var(--text-color-default);
+}
+
+[class*='typo-body']{
+  color:var(--text-color-default);
+}
+
+[class*='typo-caption']{
+  color:var(--text-color-lighter);
+}
+
+@each $usage-key in $usage-map {
+  @each $size-key in $size-map {
+    @each $weight-key in $weight-map {
+      .typo-#{$usage-key}-#{$size-key}-#{$weight-key} {
+        font-size: var(--font-size-#{$usage-key}-#{$size-key});
+        font-weight: var(--font-weight-#{$weight-key});
+        line-height: var(--line-height-#{$usage-key}-#{$size-key});
+      }
+    }
+  }
+}
+
+@each $usage-key in $usage-map {
+  @each $size-key in $size-map {    
+    .fs-#{$usage-key}-#{$size-key} {
+      font-size: var(--font-size-#{$usage-key}-#{$size-key});        
+    }
+  }
+}
+
+.fw-bold{font-weight:var(--font-weight-bold) !important;}
+.fw-semibold{font-weight:var(--font-weight-semibold) !important;}
+.fw-medium{font-weight:var(--font-weight-medium) !important;}
+.fw-regular{font-weight:var(--font-weight-regular) !important;}
+
+.fc-100{color:var(--text-color-100);}
+.fc-200{color:var(--text-color-200);}
+.fc-300{color:var(--text-color-300);}
+.fc-400{color:var(--text-color-400);}
+.fc-500{color:var(--text-color-500);}
+.fc-600{color:var(--text-color-600);}
+.fc-700{color:var(--text-color-700);}
+.fc-800{color:var(--text-color-800);}
+.fc-900{color:var(--text-color-900);}
+
+@mixin typo-display-lg-bold {
+  font-size: var(--font-size-display-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-display-lg);
+}
+
+@mixin typo-display-lg-semibold {
+  font-size: var(--font-size-display-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display-lg);
+}
+
+@mixin typo-display-lg-medium {
+  font-size: var(--font-size-display-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-display-lg);
+}
+
+@mixin typo-display-lg-regular {
+  font-size: var(--font-size-display-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-display-lg);
+}
+
+@mixin typo-display-md-bold {
+  font-size: var(--font-size-display-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-display-md);
+}
+
+@mixin typo-display-md-semibold {
+  font-size: var(--font-size-display-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display-md);
+}
+
+@mixin typo-display-md-medium {
+  font-size: var(--font-size-display-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-display-md);
+}
+
+@mixin typo-display-md-regular {
+  font-size: var(--font-size-display-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-display-md);
+}
+
+@mixin typo-display-sm-bold {
+  font-size: var(--font-size-display-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-display-sm);
+}
+
+@mixin typo-display-sm-semibold {
+  font-size: var(--font-size-display-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display-sm);
+}
+
+@mixin typo-display-sm-medium {
+  font-size: var(--font-size-display-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-display-sm);
+}
+
+@mixin typo-display-sm-regular {
+  font-size: var(--font-size-display-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-display-sm);
+}
+
+@mixin typo-heading-lg-bold {
+  font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading-lg);
+}
+
+@mixin typo-heading-lg-semibold {
+  font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading-lg);
+}
+
+@mixin typo-heading-lg-medium {
+  font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading-lg);
+}
+
+@mixin typo-heading-lg-regular {
+  font-size: var(--font-size-heading-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-heading-lg);
+}
+
+@mixin typo-heading-md-bold {
+  font-size: var(--font-size-heading-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading-md);
+}
+
+@mixin typo-heading-md-semibold {
+  font-size: var(--font-size-heading-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading-md);
+}
+
+@mixin typo-heading-md-medium {
+  font-size: var(--font-size-heading-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading-md);
+}
+
+@mixin typo-heading-md-regular {
+  font-size: var(--font-size-heading-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-heading-md);
+}
+
+@mixin typo-heading-sm-bold {
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading-sm);
+}
+
+@mixin typo-heading-sm-semibold {
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-heading-sm);
+}
+
+@mixin typo-heading-sm-medium {
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading-sm);
+}
+
+@mixin typo-heading-sm-regular {
+  font-size: var(--font-size-heading-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-heading-sm);
+}
+
+@mixin typo-body-lg-bold {
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body-lg);
+}
+
+@mixin typo-body-lg-semibold {
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-body-lg);
+}
+
+@mixin typo-body-lg-medium {
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body-lg);
+}
+
+@mixin typo-body-lg-regular {
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-lg);
+}
+
+@mixin typo-body-md-bold {
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body-md);
+}
+
+@mixin typo-body-md-semibold {
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-body-md);
+}
+
+@mixin typo-body-md-medium {
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body-md);
+}
+
+@mixin typo-body-md-regular {
+  font-size: var(--font-size-body-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-md);
+}
+
+@mixin typo-body-sm-bold {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-body-sm);
+}
+
+@mixin typo-body-sm-semibold {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-body-sm);
+}
+
+@mixin typo-body-sm-medium {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-body-sm);
+}
+
+@mixin typo-body-sm-regular {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body-sm);
+}
+
+@mixin typo-caption-lg-bold {
+  font-size: var(--font-size-caption-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-caption-lg);
+}
+
+@mixin typo-caption-lg-semibold {
+  font-size: var(--font-size-caption-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-caption-lg);
+}
+
+@mixin typo-caption-lg-medium {
+  font-size: var(--font-size-caption-lg);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-caption-lg);
+}
+
+@mixin typo-caption-lg-regular {
+  font-size: var(--font-size-caption-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-caption-lg);
+}
+
+
+@mixin typo-caption-md-bold {
+  font-size: var(--font-size-caption-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-caption-md);
+}
+
+@mixin typo-caption-md-semibold {
+  font-size: var(--font-size-caption-md);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-caption-md);
+}
+
+@mixin typo-caption-md-medium {
+  font-size: var(--font-size-caption-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-caption-md);
+}
+
+@mixin typo-caption-md-regular {
+  font-size: var(--font-size-caption-md);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-caption-md);
+}
+
+
+@mixin typo-caption-sm-bold {
+  font-size: var(--font-size-caption-sm);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-caption-sm);
+}
+
+@mixin typo-caption-sm-semibold {
+  font-size: var(--font-size-caption-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-caption-sm);
+}
+
+@mixin typo-caption-sm-medium {
+  font-size: var(--font-size-caption-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-caption-sm);
+}
+
+@mixin typo-caption-sm-regular {
+  font-size: var(--font-size-caption-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-caption-sm);
+}
+
+
+.h1{@include typo-display-sm-bold;margin:0;}
+h2,
+.h2{@include typo-heading-lg-semibold;margin:0;}
+h3,
+.h3{@include typo-heading-md-semibold;margin:0;}
+h4,
+.h4{@include typo-heading-sm-semibold;margin:0;}
+h5,
+.h5{@include typo-body-lg-medium;margin:0;}

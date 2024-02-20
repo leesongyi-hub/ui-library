@@ -1,0 +1,162 @@
+//mt-0px ~ mt-60px
+@for $i from 0 through 30 {
+  .mt-#{$i * 2}px {
+    margin-top: #{$i * 2px} !important;
+  }
+}
+
+//mb-0px ~ mt-60px
+@for $i from 0 through 30 {
+  .mb-#{$i * 2}px {
+    margin-bottom: #{$i * 2px} !important;
+  }
+}
+
+//mr-0px ~ mr-60px
+@for $i from 0 through 30 {
+  .mr-#{$i * 2}px {
+    margin-right: #{$i * 2px} !important;
+  }
+}
+
+//ml-0px ~ ml-60px
+@for $i from 0 through 30 {
+  .ml-#{$i * 2}px {
+    margin-left: #{$i * 2px} !important;
+  }
+}
+
+//m-0px ~ m-60px
+@for $i from 0 through 30 {
+  .m-#{$i * 2}px {
+    padding: #{$i * 2px}!important;
+  }
+}
+
+//my-0px ~ p-60px
+@for $i from 0 through 30 {
+  .my-#{$i * 2}px {
+    margin-top: #{$i * 2px} !important;
+    margin-bottom: #{$i * 2px} !important;
+  }
+}
+
+//mx-0px ~ p-60px
+@for $i from 0 through 30 {
+  .mx-#{$i * 2}px {
+    margin-left: #{$i * 2px} !important;
+    margin-right: #{$i * 2px} !important;
+  }
+}
+
+//p-0px ~ p-60px
+@for $i from 0 through 30 {
+  .p-#{$i * 2}px {
+    padding: #{$i * 2px}!important;
+  }
+}
+
+//pt-0px ~ p-60px
+@for $i from 0 through 30 {
+  .pt-#{$i * 2}px {
+    padding-top: #{$i * 2px} !important;
+  }
+}
+
+//pb-0px ~ p-60px
+@for $i from 0 through 30 {
+  .pb-#{$i * 2}px {
+    padding-bottom: #{$i * 2px} !important;
+  }
+}
+
+//pr-0px ~ p-60px
+@for $i from 0 through 30 {
+  .pr-#{$i * 2}px {
+    padding-right: #{$i * 2px} !important;
+  }
+}
+
+//pl-0px ~ p-60px
+@for $i from 0 through 30 {
+  .pl-#{$i * 2}px {
+    padding-left: #{$i * 2px} !important;
+  }
+}
+
+//pb-0px ~ p-60px
+@for $i from 0 through 30 {
+  .pb-#{$i * 2}px {
+    padding-bottom: #{$i * 2px} !important;
+  }
+}
+
+//py-0px ~ p-60px
+@for $i from 0 through 30 {
+  .py-#{$i * 2}px {
+    padding-top: #{$i * 2px} !important;
+    padding-bottom: #{$i * 2px} !important;
+  }
+}
+
+//px-0px ~ p-60px
+@for $i from 0 through 30 {
+  .px-#{$i * 2}px {
+    padding-left: #{$i * 2px} !important;
+    padding-right: #{$i * 2px} !important;
+  }
+}
+
+//fs-12px ~ fs-40px
+@for $i from 6 through 20 {
+  .fs-#{$i * 2}px {
+    font-size: #{$i * 2px} !important;
+  }
+}
+
+//mask-12px ~ mask-40px
+@for $i from 6 through 20 {
+  .mask-#{$i * 2}px {
+    min-width: #{$i * 2px} !important;
+    width: #{$i * 2px} !important;
+    height: #{$i * 2px} !important;
+  }
+}
+
+//w-20px ~ w-600px (20px씩 증가)
+@for $i from 1 through 30 {
+  .w-#{$i * 20}px {
+    width: #{$i * 20px} !important;
+    max-width: #{$i * 20px} !important;
+  }
+}
+
+//w-700px ~ w-1600px (100px씩 증가)
+@for $i from 7 through 16 {
+  .w-#{$i * 100}px {
+    width: #{$i * 100px} !important;
+    max-width: #{$i * 100px} !important;
+  }
+}
+
+[class*='mask-']{display:inline-flex;align-items: center;justify-content: center;}
+
+//color
+.col-dark{color:var(--text-color-dark)}
+.col-gray{color:var(--text-color-default)}
+.col-lightgray{color:var(--text-color-light)}
+.col-caption{color:var(--text-color-lighter)}
+
+.col-required{color:var(--text-color-required)}
+.col-error{color:var(--text-color-error)}
+.col-warning{color:var(--text-color-warning)}
+.col-success{color:var(--text-color-success)}
+
+.col-blue{color:var(--base-color-blue-700)}
+.col-red{color:var(--base-color-red-700)}
+.col-green{color:var(--base-color-green-700)}
+
+[class*="state-mark-"]::before{content:'';position: relative;top:1px;display:inline-block;margin-right:6px;width:8px;height:8px;border-radius: 50%;}
+.state-mark-green::before{background-color: var(--base-color-green-500);}
+.state-mark-red::before{background-color: var(--base-color-red-500);}
+.state-mark-yellow::before{background-color: var(--base-color-yellow-500);}
