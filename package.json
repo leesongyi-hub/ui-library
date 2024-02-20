@@ -9,5 +9,7 @@
     "gulp-tap": "^2.0.0",
     "vinyl-sourcemaps-apply": "^0.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "material-icons": "^1.13.12"
+  }
 }

@@ -1,124 +1,151 @@
 @charset "UTF-8";
 
-//공통레이아웃
-.wrap{width:100%;min-width:1600px;overflow-x:auto;}
-.wrap .container{width:100%;max-width:100%;padding:0;margin:0;}
-.wrap .content{width:100%;padding-top: var(--header-height);padding-left:240px;}
-.wrap .main-cont{position:relative;width:100%;padding-top:48px;}
-.wrap .main-header{position:absolute;top:0;left:0;display:flex;align-items: center;width:100%;padding:10px 24px;min-height:48px;border-bottom:1px solid var(--border-color-default);}
-.wrap .main-header .breadcrumbs ul{display:flex;align-items: center;}
-.wrap .main-header .breadcrumbs li{display:flex;align-items: center;color:var(--text-color-lighter);}
-.wrap .main-header .breadcrumbs li.current{color:var(--text-color-dark);}
-.wrap .main-header .breadcrumbs li:last-child:after{display:none;}
-.wrap .main-header .breadcrumbs .arrow{margin:0 4px;}
-.wrap .main-body{min-height:calc(100vh - var(--header-height));padding:24px 24px 80px;}
+html{
+	scroll-behavior: smooth;
+}
+.guide-page{
 
-//시스템관리 > 시스템 설정
-.article .tit{margin-bottom:16px;}
-.system-page .article{margin-bottom:36px;}
+  /* 네비게이션 */
+  .lnb {display:flex;flex-direction: column;position:fixed;top:0;left:0;min-width:240px;height:100%;min-height:100vh;border-right:1px solid var(--border-color-light);background-color:var(--bg-color-light);}
+  .lnb-head{display:flex;align-items:center;height:50px;border-bottom:1px solid rgba(255,255,255,.2);overflow:hidden;}
+  .lnb-body{flex:1;padding-top:24px;overflow-y:auto;}
+  .lnb-body .lnb-list{padding:0 16px 12px;margin-bottom:24px;border-bottom:1px solid var(--border-color-light);}
+  .lnb-body .lnb-list:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0;}
+  .lnb-body .lnb-list-label{padding:0 16px 0 12px;margin-bottom:8px;color:var(--text-color-lighter);}
+  .lnb-body .lnb-sub-item a {display:block;line-height:1em;padding:16px;width:100%;font-size:15px;font-weight:500;border-radius: 4px;transition:.3s}
+  .lnb-body .lnb-sub-item a:hover{opacity: 1;}
+  .lnb-body .lnb-sub-item.on a{color:var(--text-color-primary);background-color:var(--bg-color-tonal-dark-lighter);}
+  .lnb-footer{padding:8px 16px;font-size:12px;color:var(--text-color-lighter);}
+  
+  /* 섹션 네비게이션 */
+  // .section-navi{position:fixed;top:20px;right:20px;}
+  
+  /* 공통레이아웃 */
+  .content{display:flex;padding:40px;height:100%;}
+  .inner{display:flex;flex-direction: column;width:calc(100% - 200px);}
+  .section-navi{position:sticky;top:0;max-width:200px;margin-left:40px;height: 100%;}
+  .section-navi li{margin-bottom:4px;}
+  .section-navi li:last-child{margin-bottom:0;}
+  .section-navi a{font-size:13px;line-height:16px;color:var(--text-color-light)}
+}
 
-.system-page .keywordTable-area .res-table .tr .td{display:flex;flex-direction: column;height:100%;padding:10px;}
-.system-page .keywordTable-area .res-table textarea{height:100%;}
-.system-page .fixed-area{position:fixed;bottom:0;left:0;width:100%;text-align: right;padding:10px 24px;background-color:var(--base-color-white);box-shadow: var(--shadow-md);border-top:1px solid var(--border-color-light)}
+//가이드
+ h2,
+.guide-page h3,
+.guide-page h4,
+.guide-page h5 {margin-bottom:10px;}
+:not(.gd-example) > h2 {font-size:30px;}
 
-//시스템관리 > [모달]역할상세보기
-.role-list-item{display:flex;margin-bottom: 12px;}
-.role-list-item .role-tit{width:120px;color:var(--text-color-light)}
+.guide-page .sec-tit-lg{font-size:48px;font-weight:bold;line-height:130%;margin-bottom:40px;}
+.guide-page .sec-tit-md{font-size:26px;padding-top:24px;}
+.guide-page .sce-tit-sm{font-size:20px;}
+.guide-page .sce-body-lg{font-size:16px;}
+.guide-page .sce-body-md{font-size:15px;}
+.guide-page .sce-caption{font-size:13px;}
 
-//시스템관리 > 역할관리 > [모달]관리도구 메뉴권한
-.modal-role .authorization-area .table-wrap th,
-.modal-role .authorization-area .table-wrap td{color:var(--text-color-300);font-weight: 400;border-right:1px solid var(--border-color-light)}
-.modal-role .authorization-area .table-wrap tr td:first-child ,
-.modal-role .authorization-area .table-wrap tr th:first-child{position: sticky;top:0;left:0;background-color:var(--bg-color-default);z-index: 10;}
-.modal-role .authorization-area .table-wrap td .custom-control{text-align:center;justify-content: center !important;}
-.modal-role .authorization-area .table-wrap .custom-control .custom-control-label{flex-wrap:wrap;align-items: center;justify-content: center;flex-flow:column-reverse;}
-.modal-role .authorization-area .table-wrap .custom-control .custom-control-label span{display:flex;margin-bottom:6px;width: 100%;min-height:38px;align-items: end;margin-left: 0 !important;text-align: center;line-height:16px;}
-.modal-role .authorization-area .table-wrap .custom-control{justify-content: center;}
+/* .right_head {position:fixed;left:240px;right:0;background:#fff;z-index:1;} */
+.right_head h2 {font-size:20px;}
 
-//시스템관리 > 역할관리 > [모달]상담/관리 권한
-.modal-role .checked-area{margin-top:24px;padding:0px 20px 20px 20px;border:1px solid var(--border-color-light);border-radius: 4px;}
-.modal-role .checked-area.disabled{display:none;}
-.memberList-view-area{display:flex;}
-.memberList-view-area .memberList-view{width:50%;}
-.memberList-view-area .memberList-view-head{display:flex;align-items: center;margin-bottom:8px;}
-.memberList-view-area .memberList-view-head button{margin-left:12px;}
-.memberList-view-area .memberList-view-list{height:250px;padding:12px 16px;background-color:var(--bg-color-light);border:1px solid var(--border-color-light);border-radius: var(--border-radius-md);overflow-y:auto;}
-.memberList-view-area .memberList-view-list li{margin-bottom:6px;}
-.memberList-view-area .memberList-view-list .nodata{display:flex;justify-content: center;align-items: center;margin-bottom:0;height:100%;color:var(--text-color-lighter)}
+.dq_footer {position:fixed;left:240px;right:0;bottom:0;background:#fff;}
 
-//시스템관리 > 역할관리 > [모달]상담사 역할목록 편집
-.modal-counselor-edit .memberList-wrap{border:1px solid var(--border-color-light);}
-.modal-counselor-edit .memberList-head{display:flex;align-items: space-between;align-items: center;padding:8px 16px;border-bottom:1px solid var(--border-color-light);justify-content:space-between;min-height:49px;}
-.modal-counselor-edit .memberList-area{padding:12px 16px;height: 500px;max-height: 500px;overflow-y: auto;}
-.modal-counselor-edit .memberList-area li{margin-bottom:6px;}
+.gd-desc {margin-bottom:20px;line-height:1.5em;}
+h2+.gd-desc {margin-top:10px;font-size:18px;}
+.code-area+.gd-desc,  
+.gd-content-wrap .gd-desc:last-child {margin-bottom:0;}
+.code-area+.gd-desc {border:1px solid #e5e5e5;border-top:none;padding:20px;}
 
-.modal-counselor-edit .memberList-wrap.add{background-color:var(--bg-color-light);}
-.modal-counselor-edit .memberList-wrap.add .memberList-area{height: 549px;max-height: 549px;}
-.modal-counselor-edit .memberList-wrap.add li{display:flex;justify-content: space-between;align-items: baseline;}
-.modal-counselor-edit .memberList-wrap.add li button{position: relative;top:3px;margin-left:12px;color:var(--icon-color-lighter);opacity: .5;}
-.modal-counselor-edit .memberList-wrap.add li button:hover{opacity: 1;}
+.gd-content-wrap {margin:60px 0 0;position:relative;}
+.content > .gd-content-wrap:first-child {padding-top:0;}
+.gd-content-wrap > h2 {margin-bottom:20px !important;font-weight:bold;color:#111;}
+.gd-example {position:relative;border:1px solid rgba(0,0,0,.1);border-bottom:none;padding:30px;margin-top:25px;}
+// .gd-example::before {content:"EXAMPLE";position:absolute;left:5px;top:-9px;background:#fff;display:inline-block;font-size:12px;padding:0 5px;color:#ccc;font-weight:lighter;letter-spacing:2px;}
 
-.modal-counselor-edit .arrow-icon-area{display:flex;align-items:center;height: 100%;font-size:24px;}
+.gd-example-wrap {margin-bottom:40px;}
+.gd-content-wrap .gd-content > .gd-example-wrap:last-child {margin-bottom:0;}
 
-//시스템관리 > 어드바이저 설정
-.util-bar{display:flex;align-items:end;margin-bottom:16px;}
-.util-bar .right-area{margin-left:auto;font-size:0;}
+.code-area {position:relative;}
+.code-area + .code-area {margin-top:10px;}
+.code-area > button.btn-clipboard-copy {display:block !important;position:absolute;z-index:1;right:5px;top:-34px;display:none;transition:all 1.2s ease}
+.code-area > button.btn-clipboard-copy.on::before {content:"Copied!";font-size:11px;color:#000;background:rgba(255,255,255,.8);position:absolute;line-height:1em;width:fit-content;white-space:nowrap;top:3px;right:calc(100% + 7px);padding:3px 5px;border-radius:2px;transition:all .2s ease}
+/* .code-area:hover > button.btn-clipboard-copy {display:block;white-space: nowrap;} */
+.code-area.maxh-none .syntaxhighlighter {max-height:none !important}
 
-//시시템관리 > [모달] 계정 추가, 상세, 수정
-[class*="modal-account"] .account-area .account-item{display: flex;margin-bottom:16px;}
-[class*="modal-account"] .account-area .account-item:last-child{margin-bottom:0;}
-[class*="modal-account"] .account-area .account-item > label{width:160px;min-width:160px;color:var(--text-color-light)}
-[class*="modal-account"] .account-area .account-item .input-label{line-height:36px;}
-[class*="modal-account"] .account-area .form-area{flex: 1;width:calc(100% - 160px)}
-[class*="modal-account"] .sub-field{margin-top:24px;padding-top:24px;border-top:1px solid var(--border-color-light)}
+.syntaxhighlighter {padding:10px 0;}
+.syntaxhighlighter::-webkit-scrollbar-track {background-color:transparent;}
+.syntaxhighlighter::-webkit-scrollbar-thumb {background-color:rgba(255, 255, 255, .3);border-radius:3px;}
+.syntaxhighlighter::-webkit-scrollbar-thumb:hover {background-color:rgba(255, 255, 255, .5);} 
+.syntaxhighlighter::-webkit-scrollbar {width:15px;height:15px;background-color:rgba(255, 255, 255, .3);}
+.syntaxhighlighter {border:none;padding:10px 0;}
+.syntaxhighlighter .gutter * {color:rgba(255,255,255,.4)}
 
-//시시템관리 > [모달] 부서 상세보기
-[class*="modal-team-"] .account-area .account-item{display: flex;margin-bottom:16px;}
-[class*="modal-team"] .account-area .account-item:last-child{margin-bottom:0;}
-[class*="modal-team-"] .account-area .account-item > label{width:160px;min-width:160px;color:var(--text-color-light)}
-[class*="modal-team-"] .account-area .account-item .input-label{line-height:36px;}
-[class*="modal-team-"] .account-area .form-area{flex: 1;width:calc(100% - 160px)}
-[class*="modal-team"] .sub-field{margin-top:24px;padding-top:24px;border-top:1px solid var(--border-color-light)}
+.class-wrap {color:#750d0d;background:#f3dbdb;padding:0 3px;border-radius:3px;font-size:12px;border:1px dotted #e2a7a7;margin:0 3px;line-height:1.2em;display:inline-block;}
+.style-wrap {color:#5f520a;background:#f0edce;padding:0 3px;border-radius:3px;font-size:12px;border:1px dotted #d6ce9f;margin:0 3px;line-height:1.2em;display:inline-block;}
 
-//시스템관리 > [모달]비밀번호 초기화
-.modal-resetPw .example-area{margin:16px 0;padding:12px;text-align: center;background-color: var(--bg-color-default);}
+/**/
+/* .wrap{height: 100vh;} */
+header{display:flex;align-items:center;padding:8px 40px;border-bottom:1px solid #ddd;justify-content:space-between;}
+footer{padding:0 40px;}
+.wrap > .container{display: flex;flex-direction:column;padding:0;padding-left:240px;}
 
-// 시스템관리 > 어드바이저 설정
-.comp-area > li{border:1px solid #eee;border-radius: 8px;overflow: hidden;margin-bottom: 24px;box-shadow: var(--shadow-sm);}
-.comp-item{display:flex;padding:8px 16px;align-items: center;background-color:var(--bg-color-default);border-bottom:1px solid var(--border-color-light);}
-.comp-item .left-area{display:flex;}
-.comp-item .left-area label{margin-right:4px;}
-.comp-item .right-area{display:flex;margin-left: auto;}
-.addSubComp-btn-area{width:100%;}
-.addSubComp-btn-area:hover{background-color:var(--bg-color-default)}
-.addSubComp-btn-area .addSubComp-btn{display:flex;width:100%;justify-content: center;align-items: center;height:32px;font-size:13px;font-weight:500;}
 
-.compSub-area .comp-item{position:relative;padding-left:32px;background-color: #fff;}
-.compSub-area .comp-item::after{position:absolute;content:'';display:inline-block;width:10px;height:1px; background-color:var(--border-color-dark);top:50%;left:16px;}
-.compSub-area .comp-item::before{position:absolute;content:'';display:inline-block;width:1px;height:8px; background-color:var(--border-color-dark);top:calc(50% - 8px);left:16px;}
+/* h4{font-size:15px;font-weight:500;} */
 
-.comp-area .form-switch{width:56px;}
-.comp-area .form-switch label::after{content:'미사용';word-break:keep-all;position:absolute;top:0;left:22px;display:block;font-size:11px;line-height:24px;font-weight:700;color:var(--text-color-lighter);opacity: .9;letter-spacing:-.2px}
-.comp-area .form-switch input:checked + label::after{content:'사용';left:8px;color:#fff;}
+.table_wrap .table{
+  border-top:1px solid #eee;
+}
+.table_wrap .table th{
+  background-color:#f5f5f5;
+}
 
-//시스템관리 > 시스템모니터링
-.monitoring-page .table-area{max-height: 582px;}
-.monitoring-page .table-wrap th:first-child{padding-left:24px;}
-.monitoring-page .table-wrap td:first-child{padding-left:24px;}
-.monitoring-page .table-wrap{border-top:0;}
-.monitoring-page .table-wrap tfoot{bottom:-1px;background-color:var(--bg-color-light);z-index: 10;}
-.monitoring-page .table-wrap tfoot tr:hover{background-color:var(--bg-color-light);}
-.monitoring-page .table-wrap tfoot td{border-top:1px solid var(--border-color-default)}
+.table_wrap .table th,
+.table_wrap .table td{
+  height:auto;
+  border-color:#eee;
+}
 
-//그래프영역
-.graph-area{border:1px solid var(--border-color-light);padding:16px;border-radius: var(--border-radius-md);}
-.graph-area .graph{position:relative;}
+.syntaxhighlighter{
+  max-height:450px;
+}
 
-//윈도우팝업
-.windowPop-wrap{padding-top:64px;}
-.windowPop-head{position:fixed;top:0;left:0;width:100%;border-bottom:1px solid var(--border-color-light);background-color: var(--bg-color-light);}
-.windowPop-body{position:relative;padding:16px;height:calc(100vh - 64px)}
+/* .guide-page h3{font-size:18px;} */
 
-//비활성화 dim
-.disabled-dim{display:flex;align-items: center;justify-content: center;width:100%;height:100%;position:absolute;top:0;left:0;background-color:rgba(0,0,0,.6);z-index:10;}
-.disabled-dim .txt{color:#fff;}
+.right_head{display:flex;align-items:center;padding:0 40px;border-bottom:1px solid #eee;height:50px;}
+.container{max-width:100%;}
+.float-right{margin-left:auto;}
+
+.h-100 .syntaxhighlighter{max-height:100% !important;}
+
+.gd-content-wrap > h2{position:sticky;top:0;margin:4px -40px;padding:2px 40px;background-color:rgba(255,255,255,.9);z-index: 1000;}
+
+/* .container{position:absolute;top:0;right:0;} */
+
+
+.wrap .syntaxhighlighter{background-color:#f8f8f8 !important;}
+.wrap .syntaxhighlighter .line.alt1,
+.wrap .syntaxhighlighter .line.alt2{background-color:transparent !important}
+.wrap .syntaxhighlighter .gutter .line{display:none !important}
+.wrap .syntaxhighlighter .keyword{color:#c6303e !important}
+.wrap .syntaxhighlighter .string, .wrap .syntaxhighlighter .string a{color:#0344bf !important;}
+.wrap .syntaxhighlighter .color1, .wrap .syntaxhighlighter .color1 a{color:#3a3967 !important;}
+.wrap .syntaxhighlighter .comments, .wrap .syntaxhighlighter .comments a{font-size:13px !important;}
+.wrap .syntaxhighlighter .toolbar{display:none !important;}
+
+.code-head{display:flex;padding:8px 10px;background-color:#f8f8f8;border:1px solid #eaeaea;border-bottom:0;}
+.code-head .tit{font-size:14px;font-weight:400;}
+.code-head button{margin-left:auto;}
+
+.ico_list{line-height:14px;}
+.ico_list li{margin:4px;display:flex;flex-wrap: wrap;justify-content:center;width:80px;height:80px;}
+.ico_list li span{display:block;width:100%;font-size:12px;text-align: center;line-height:14px;}
+
+.info-wrap{background-color:#f4fbff;padding:16px 16px;}
+
+.syntaxhighlighter::-webkit-scrollbar{background-color:#eee;}
+.syntaxhighlighter::-webkit-scrollbar-thumb{background-color:#ddd;border-radius:0;}
+.syntaxhighlighter:hover::-webkit-scrollbar-thumb{background-color:#aaa;}
+
+.wrap{min-width:100% !important}
+
+.badge-variables{padding:4px 4px 4px 8px;background-color:#f5e4d5;border-radius:4px;}
+.badge-variables .btn-copy{margin-left:4px;}
+.badge-variables .btn-copy svg{width:18px;height:18px;opacity: .8;}
